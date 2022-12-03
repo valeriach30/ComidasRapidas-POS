@@ -9,5 +9,32 @@ package Modelo;
  * @author vchin
  */
 public class Postre {
+    private enumPostre nombre;
     private Float precio;
+
+    public Postre() {
+    }
+
+    public Postre(enumPostre nombre, Float precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    public enumPostre getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(enumPostre nombre) {
+        this.nombre = nombre;
+    }
+
+    public Float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+    
+    
 }

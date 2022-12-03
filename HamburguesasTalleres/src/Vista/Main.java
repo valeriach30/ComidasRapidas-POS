@@ -5,6 +5,8 @@
 package Vista;
 
 import Control.Controlador;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,6 +15,7 @@ import Control.Controlador;
 public class Main extends javax.swing.JFrame {
 
     Controlador contol ;
+    Integer totalP = 0;
     public Main() {
         initComponents();
         this.contol = new Controlador();
@@ -59,8 +62,8 @@ public class Main extends javax.swing.JFrame {
         machaTortabtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPedido = new javax.swing.JTable();
-        jSpinner1 = new javax.swing.JSpinner();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cantidad = new javax.swing.JSpinner();
+        tipoBebida = new javax.swing.JComboBox<>();
         imprimirbtn = new javax.swing.JButton();
         btn355 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
@@ -71,9 +74,14 @@ public class Main extends javax.swing.JFrame {
         combo1btn = new javax.swing.JButton();
         finalizarbtn = new javax.swing.JButton();
         efectivobtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        totalApagar = new javax.swing.JLabel();
         tarjetabtn = new javax.swing.JButton();
         sinpebtn = new javax.swing.JButton();
+        chiclesbtn = new javax.swing.JButton();
+        postrebtn = new javax.swing.JButton();
+        cajetabtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,7 +103,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(huevobtn);
-        huevobtn.setBounds(540, 20, 125, 60);
+        huevobtn.setBounds(540, 10, 125, 60);
 
         Sencillabtn.setBackground(new java.awt.Color(51, 153, 255));
         Sencillabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -109,7 +117,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Sencillabtn);
-        Sencillabtn.setBounds(20, 20, 125, 60);
+        Sencillabtn.setBounds(20, 10, 125, 60);
 
         dobleQuesobtn.setBackground(new java.awt.Color(51, 153, 255));
         dobleQuesobtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -123,7 +131,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(dobleQuesobtn);
-        dobleQuesobtn.setBounds(410, 20, 125, 60);
+        dobleQuesobtn.setBounds(410, 10, 125, 60);
 
         DobleTortabtn.setBackground(new java.awt.Color(51, 153, 255));
         DobleTortabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -137,7 +145,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(DobleTortabtn);
-        DobleTortabtn.setBounds(150, 20, 125, 60);
+        DobleTortabtn.setBounds(150, 10, 125, 60);
 
         TripleTortabtn.setBackground(new java.awt.Color(51, 153, 255));
         TripleTortabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -151,7 +159,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(TripleTortabtn);
-        TripleTortabtn.setBounds(280, 20, 125, 60);
+        TripleTortabtn.setBounds(280, 10, 125, 60);
 
         choriBurgerbtn.setBackground(new java.awt.Color(51, 153, 255));
         choriBurgerbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -165,7 +173,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(choriBurgerbtn);
-        choriBurgerbtn.setBounds(280, 90, 125, 60);
+        choriBurgerbtn.setBounds(280, 80, 125, 60);
 
         pollobtn.setBackground(new java.awt.Color(255, 184, 14));
         pollobtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -179,7 +187,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pollobtn);
-        pollobtn.setBounds(410, 90, 125, 60);
+        pollobtn.setBounds(410, 80, 125, 60);
 
         carneResbtn.setBackground(new java.awt.Color(255, 184, 14));
         carneResbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -193,7 +201,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(carneResbtn);
-        carneResbtn.setBounds(540, 90, 125, 60);
+        carneResbtn.setBounds(540, 80, 125, 60);
 
         carneCerdobtn.setBackground(new java.awt.Color(255, 184, 14));
         carneCerdobtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -207,7 +215,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(carneCerdobtn);
-        carneCerdobtn.setBounds(20, 160, 125, 60);
+        carneCerdobtn.setBounds(20, 150, 125, 60);
 
         pescadobtn.setBackground(new java.awt.Color(255, 184, 14));
         pescadobtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -221,7 +229,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pescadobtn);
-        pescadobtn.setBounds(150, 160, 125, 60);
+        pescadobtn.setBounds(150, 150, 125, 60);
 
         patatasbtn.setBackground(new java.awt.Color(100, 147, 19));
         patatasbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -235,7 +243,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(patatasbtn);
-        patatasbtn.setBounds(280, 160, 125, 60);
+        patatasbtn.setBounds(280, 150, 125, 60);
 
         papasbtn.setBackground(new java.awt.Color(100, 147, 19));
         papasbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -249,7 +257,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(papasbtn);
-        papasbtn.setBounds(410, 160, 125, 60);
+        papasbtn.setBounds(410, 150, 125, 60);
 
         arosbtn.setBackground(new java.awt.Color(100, 147, 19));
         arosbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -263,7 +271,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(arosbtn);
-        arosbtn.setBounds(540, 160, 125, 60);
+        arosbtn.setBounds(540, 150, 125, 60);
 
         palillosbtn.setBackground(new java.awt.Color(100, 147, 19));
         palillosbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -277,7 +285,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(palillosbtn);
-        palillosbtn.setBounds(20, 230, 125, 60);
+        palillosbtn.setBounds(20, 220, 125, 60);
 
         salchipapasbtn.setBackground(new java.awt.Color(100, 147, 19));
         salchipapasbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -291,7 +299,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(salchipapasbtn);
-        salchipapasbtn.setBounds(150, 230, 125, 60);
+        salchipapasbtn.setBounds(150, 220, 125, 60);
 
         papanachosbtn.setBackground(new java.awt.Color(100, 147, 19));
         papanachosbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -305,7 +313,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(papanachosbtn);
-        papanachosbtn.setBounds(280, 230, 125, 60);
+        papanachosbtn.setBounds(280, 220, 125, 60);
 
         papasbacon.setBackground(new java.awt.Color(100, 147, 19));
         papasbacon.setForeground(new java.awt.Color(0, 0, 0));
@@ -319,7 +327,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(papasbacon);
-        papasbacon.setBounds(410, 230, 125, 60);
+        papasbacon.setBounds(410, 220, 125, 60);
 
         tacoHarinabtn.setBackground(new java.awt.Color(255, 97, 29));
         tacoHarinabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -333,7 +341,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tacoHarinabtn);
-        tacoHarinabtn.setBounds(20, 300, 125, 60);
+        tacoHarinabtn.setBounds(20, 290, 125, 60);
 
         tacoMaizbtn.setBackground(new java.awt.Color(255, 97, 29));
         tacoMaizbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -347,7 +355,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tacoMaizbtn);
-        tacoMaizbtn.setBounds(540, 230, 125, 60);
+        tacoMaizbtn.setBounds(540, 220, 125, 60);
 
         tacoPapasbtn.setBackground(new java.awt.Color(255, 97, 29));
         tacoPapasbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -361,7 +369,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tacoPapasbtn);
-        tacoPapasbtn.setBounds(150, 300, 125, 60);
+        tacoPapasbtn.setBounds(150, 290, 125, 60);
 
         choripanbtn.setBackground(new java.awt.Color(255, 97, 29));
         choripanbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -375,7 +383,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(choripanbtn);
-        choripanbtn.setBounds(280, 300, 125, 60);
+        choripanbtn.setBounds(280, 290, 125, 60);
 
         machobtn.setBackground(new java.awt.Color(255, 97, 29));
         machobtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -389,7 +397,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(machobtn);
-        machobtn.setBounds(410, 300, 125, 60);
+        machobtn.setBounds(410, 290, 125, 60);
 
         machabtn.setBackground(new java.awt.Color(255, 97, 29));
         machabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -403,7 +411,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(machabtn);
-        machabtn.setBounds(540, 300, 125, 60);
+        machabtn.setBounds(540, 290, 125, 60);
 
         hotdogbtn.setBackground(new java.awt.Color(255, 97, 29));
         hotdogbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -417,7 +425,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(hotdogbtn);
-        hotdogbtn.setBounds(20, 370, 125, 60);
+        hotdogbtn.setBounds(20, 360, 125, 60);
 
         superhotdogbtn.setBackground(new java.awt.Color(255, 97, 29));
         superhotdogbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -431,7 +439,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(superhotdogbtn);
-        superhotdogbtn.setBounds(150, 370, 125, 60);
+        superhotdogbtn.setBounds(150, 360, 125, 60);
 
         jamonbtn.setBackground(new java.awt.Color(51, 153, 255));
         jamonbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -445,7 +453,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jamonbtn);
-        jamonbtn.setBounds(20, 90, 125, 60);
+        jamonbtn.setBounds(20, 80, 125, 60);
 
         salchiBurgerbtn.setBackground(new java.awt.Color(51, 153, 255));
         salchiBurgerbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -459,7 +467,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(salchiBurgerbtn);
-        salchiBurgerbtn.setBounds(150, 90, 125, 60);
+        salchiBurgerbtn.setBounds(150, 80, 125, 60);
 
         fajitasbtn.setBackground(new java.awt.Color(255, 97, 29));
         fajitasbtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -473,7 +481,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(fajitasbtn);
-        fajitasbtn.setBounds(280, 370, 125, 60);
+        fajitasbtn.setBounds(280, 360, 125, 60);
 
         machaTortabtn.setBackground(new java.awt.Color(255, 97, 29));
         machaTortabtn.setForeground(new java.awt.Color(0, 0, 0));
@@ -487,14 +495,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(machaTortabtn);
-        machaTortabtn.setBounds(410, 370, 125, 60);
+        machaTortabtn.setBounds(410, 360, 125, 60);
 
         tablaPedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Cantidad", "Producto", "Valor"
@@ -513,16 +518,22 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(680, 20, 452, 402);
 
-        jSpinner1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jPanel1.add(jSpinner1);
-        jSpinner1.setBounds(130, 570, 64, 30);
+        cantidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cantidad.setValue(1);
+        jPanel1.add(cantidad);
+        cantidad.setBounds(540, 450, 64, 30);
 
-        jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agua", "Zarza", "Piña", "Kolita", "Toronja", "7 up", "Pepsi", "Frutas", "Te Melocotón", "Te limón", "Te blanco", "Ginger Ale", "Coca Cola", "Jet", "Gatorade azul", "Gatorade rojo" }));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(20, 450, 130, 31);
+        tipoBebida.setBackground(new java.awt.Color(255, 255, 255));
+        tipoBebida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tipoBebida.setForeground(new java.awt.Color(0, 0, 0));
+        tipoBebida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agua", "Zarza", "Piña", "Kolita", "Toronja", "7 up", "Pepsi", "Frutas", "Te Melocotón", "Te limón", "Te blanco", "Ginger Ale", "Coca Cola", "Jet", "Gatorade azul", "Gatorade rojo" }));
+        tipoBebida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoBebidaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tipoBebida);
+        tipoBebida.setBounds(20, 520, 130, 31);
 
         imprimirbtn.setBackground(new java.awt.Color(235, 212, 137));
         imprimirbtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -541,8 +552,13 @@ public class Main extends javax.swing.JFrame {
         btn355.setMaximumSize(new java.awt.Dimension(100, 100));
         btn355.setMinimumSize(new java.awt.Dimension(100, 100));
         btn355.setPreferredSize(new java.awt.Dimension(100, 100));
+        btn355.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn355ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn355);
-        btn355.setBounds(20, 490, 125, 60);
+        btn355.setBounds(20, 560, 125, 60);
 
         btn2.setBackground(new java.awt.Color(227, 41, 41));
         btn2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -551,8 +567,13 @@ public class Main extends javax.swing.JFrame {
         btn2.setMaximumSize(new java.awt.Dimension(100, 100));
         btn2.setMinimumSize(new java.awt.Dimension(100, 100));
         btn2.setPreferredSize(new java.awt.Dimension(100, 100));
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn2);
-        btn2.setBounds(410, 490, 125, 60);
+        btn2.setBounds(410, 560, 125, 60);
 
         btn500.setBackground(new java.awt.Color(227, 41, 41));
         btn500.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -567,7 +588,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn500);
-        btn500.setBounds(150, 490, 125, 60);
+        btn500.setBounds(150, 560, 125, 60);
 
         btn600.setBackground(new java.awt.Color(227, 41, 41));
         btn600.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -576,8 +597,13 @@ public class Main extends javax.swing.JFrame {
         btn600.setMaximumSize(new java.awt.Dimension(100, 100));
         btn600.setMinimumSize(new java.awt.Dimension(100, 100));
         btn600.setPreferredSize(new java.awt.Dimension(100, 100));
+        btn600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn600ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn600);
-        btn600.setBounds(280, 490, 125, 60);
+        btn600.setBounds(280, 560, 125, 60);
 
         eliminarUltimobtn.setBackground(new java.awt.Color(235, 212, 137));
         eliminarUltimobtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -621,7 +647,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel1.add(combo1btn);
-        combo1btn.setBounds(540, 370, 125, 60);
+        combo1btn.setBounds(540, 360, 125, 60);
 
         finalizarbtn.setBackground(new java.awt.Color(100, 136, 19));
         finalizarbtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -653,11 +679,10 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(efectivobtn);
         efectivobtn.setBounds(680, 510, 125, 60);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Cantidad");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 570, 110, 30);
+        totalApagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        totalApagar.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(totalApagar);
+        totalApagar.setBounds(540, 500, 100, 30);
 
         tarjetabtn.setBackground(new java.awt.Color(235, 212, 137));
         tarjetabtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -684,6 +709,51 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(sinpebtn);
         sinpebtn.setBounds(840, 510, 125, 60);
 
+        chiclesbtn.setBackground(new java.awt.Color(153, 102, 255));
+        chiclesbtn.setForeground(new java.awt.Color(0, 0, 0));
+        chiclesbtn.setLabel("CHICLES");
+        chiclesbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chiclesbtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chiclesbtn);
+        chiclesbtn.setBounds(280, 430, 125, 60);
+
+        postrebtn.setBackground(new java.awt.Color(153, 102, 255));
+        postrebtn.setForeground(new java.awt.Color(0, 0, 0));
+        postrebtn.setText("POSTRE");
+        postrebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postrebtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(postrebtn);
+        postrebtn.setBounds(20, 430, 125, 60);
+
+        cajetabtn.setBackground(new java.awt.Color(153, 102, 255));
+        cajetabtn.setForeground(new java.awt.Color(0, 0, 0));
+        cajetabtn.setLabel("CAJETA");
+        cajetabtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajetabtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cajetabtn);
+        cajetabtn.setBounds(150, 430, 125, 60);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Cantidad");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(420, 450, 110, 30);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("TOTAL");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(420, 500, 60, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -692,126 +762,273 @@ public class Main extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void huevobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_huevobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2750);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Con Huevo", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_huevobtnActionPerformed
 
     private void SencillabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SencillabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Sencilla", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_SencillabtnActionPerformed
 
     private void dobleQuesobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobleQuesobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2750);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Doble Queso", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_dobleQuesobtnActionPerformed
 
     private void DobleTortabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DobleTortabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Doble Torta", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_DobleTortabtnActionPerformed
 
     private void TripleTortabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripleTortabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 4500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Triple Torta", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_TripleTortabtnActionPerformed
 
     private void choriBurgerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choriBurgerbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "CHori Burger", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_choriBurgerbtnActionPerformed
 
     private void pollobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pollobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Artesanal Pollo", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_pollobtnActionPerformed
 
     private void carneResbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carneResbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Artesanal Mechada Res", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_carneResbtnActionPerformed
 
     private void carneCerdobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carneCerdobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Artesanal Mechada Cerdo", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_carneCerdobtnActionPerformed
 
     private void pescadobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pescadobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Artesanal Pescado", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_pescadobtnActionPerformed
 
     private void patatasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patatasbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Patatas", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_patatasbtnActionPerformed
 
     private void papasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_papasbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Papas", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_papasbtnActionPerformed
 
     private void arosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arosbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Aros de Cebolla", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_arosbtnActionPerformed
 
     private void palillosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_palillosbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Palillos de Queso", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_palillosbtnActionPerformed
 
     private void salchipapasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salchipapasbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1300);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Salchipapas", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_salchipapasbtnActionPerformed
 
     private void papanachosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_papanachosbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Papanachos", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_papanachosbtnActionPerformed
 
     private void papasbaconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_papasbaconActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Papas Bacon", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_papasbaconActionPerformed
 
     private void tacoHarinabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacoHarinabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Taco Harina", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_tacoHarinabtnActionPerformed
 
     private void tacoMaizbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacoMaizbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Taco Maiz", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_tacoMaizbtnActionPerformed
 
     private void tacoPapasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacoPapasbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Taco con Papas", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_tacoPapasbtnActionPerformed
 
     private void choripanbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choripanbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Choripan", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_choripanbtnActionPerformed
 
     private void machobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_machobtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Macho", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_machobtnActionPerformed
 
     private void machabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_machabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2500);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Macha", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_machabtnActionPerformed
 
     private void hotdogbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotdogbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1200);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Hot Dog Sencillo", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_hotdogbtnActionPerformed
 
     private void superhotdogbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_superhotdogbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1700);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Super Hot Dog", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_superhotdogbtnActionPerformed
 
     private void jamonbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jamonbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2750);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Con Jamon", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_jamonbtnActionPerformed
 
     private void salchiBurgerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salchiBurgerbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 2750);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Salchi Burger", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_salchiBurgerbtnActionPerformed
 
     private void fajitasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fajitasbtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3800);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Fajitas", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_fajitasbtnActionPerformed
 
     private void machaTortabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_machaTortabtnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3250);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Macha con Torta", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_machaTortabtnActionPerformed
 
     private void eliminarTodosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTodosbtnActionPerformed
@@ -819,11 +1036,27 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarTodosbtnActionPerformed
 
     private void combo1btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo1btnActionPerformed
-        // TODO add your handling code here:
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 3800);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Combo 1", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
     }//GEN-LAST:event_combo1btnActionPerformed
 
     private void btn500ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn500ActionPerformed
-        // TODO add your handling code here:
+        boolean bandera = bebidaValida(500,tipoBebida.getSelectedItem().toString());
+        if(bandera == false){
+            JOptionPane.showMessageDialog(null, "Ese tipo de bebida no tiene ese tamaño", "Error", JOptionPane.OK_OPTION);
+        }
+        else{
+            int cantidadProducto = (Integer) cantidad.getValue();
+            int total = (cantidadProducto * 1200);
+            DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+            model.addRow(new Object[]{cantidad.getValue(), tipoBebida.getSelectedItem().toString() + " 500 ml", Integer.toString(total)});
+            totalP += total;
+            totalApagar.setText(Integer.toString(totalP));
+        }
     }//GEN-LAST:event_btn500ActionPerformed
 
     private void eliminarUltimobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarUltimobtnActionPerformed
@@ -842,6 +1075,179 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sinpebtnActionPerformed
 
+    private void postrebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postrebtnActionPerformed
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Postre", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
+    }//GEN-LAST:event_postrebtnActionPerformed
+
+    private void cajetabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajetabtnActionPerformed
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Cajeta", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
+    }//GEN-LAST:event_cajetabtnActionPerformed
+
+    private void chiclesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chiclesbtnActionPerformed
+        int cantidadProducto = (Integer) cantidad.getValue();
+        int total = (cantidadProducto * 1000);
+        DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+        model.addRow(new Object[]{cantidad.getValue(), "Chicles", Integer.toString(total)});
+        totalP += total;
+        totalApagar.setText(Integer.toString(totalP));
+    }//GEN-LAST:event_chiclesbtnActionPerformed
+
+    private void btn355ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn355ActionPerformed
+        boolean bandera = bebidaValida(355,tipoBebida.getSelectedItem().toString());
+        if(bandera == false){
+            JOptionPane.showMessageDialog(null, "Ese tipo de bebida no tiene ese tamaño", "Error", JOptionPane.OK_OPTION);
+        }
+        else{
+            int cantidadProducto = (Integer) cantidad.getValue();
+            int total = (cantidadProducto * 800);
+            DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+            model.addRow(new Object[]{cantidad.getValue(), tipoBebida.getSelectedItem().toString() + " 355 ml", Integer.toString(total)});
+            totalP += total;
+            totalApagar.setText(Integer.toString(totalP));
+        }
+    }//GEN-LAST:event_btn355ActionPerformed
+
+    private void tipoBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoBebidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoBebidaActionPerformed
+
+    private void btn600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn600ActionPerformed
+        boolean bandera = bebidaValida(600,tipoBebida.getSelectedItem().toString());
+        if(bandera == false){
+            JOptionPane.showMessageDialog(null, "Ese tipo de bebida no tiene ese tamaño", "Error", JOptionPane.OK_OPTION);
+        }
+        else{
+            int cantidadProducto = (Integer) cantidad.getValue();
+            String nombre = tipoBebida.getSelectedItem().toString();
+            int precio;
+            
+            if(nombre.equals("Coca Cola") || nombre.equals("Jet") || nombre.equals("Gatorade azul") || nombre.equals("Gatorade rojo")){
+                precio = 1300;
+            }
+            else{
+                precio = 1200;
+            }
+            
+            int total = (cantidadProducto * precio);
+            DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+            model.addRow(new Object[]{cantidad.getValue(), tipoBebida.getSelectedItem().toString() + " 600 ml", Integer.toString(total)});
+            totalP += total;
+            totalApagar.setText(Integer.toString(totalP));
+        }
+    }//GEN-LAST:event_btn600ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        boolean bandera = bebidaValida(2,tipoBebida.getSelectedItem().toString());
+        if(bandera == false){
+            JOptionPane.showMessageDialog(null, "Ese tipo de bebida no tiene ese tamaño", "Error", JOptionPane.OK_OPTION);
+        }
+        else{
+            int cantidadProducto = (Integer) cantidad.getValue();
+            int total = (cantidadProducto * 2000);
+            DefaultTableModel model = (DefaultTableModel) tablaPedido.getModel();
+            model.addRow(new Object[]{cantidad.getValue(), tipoBebida.getSelectedItem().toString() + " 2 L", Integer.toString(total)});
+            totalP += total;
+            totalApagar.setText(Integer.toString(totalP));
+        }
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    
+    // -------------------------- FUNCIONES DE APOYO --------------------------
+    public boolean bebidaValida(int tamnho, String nombreBebida){
+        if(tamnho == 355){
+            switch(nombreBebida){
+                case "Agua":
+                    return true;
+                case "Zarza":
+                    return true;
+                case "Piña":
+                    return true;
+                case "Kolita":
+                    return true;
+                case "Toronja":
+                    return true;
+                case "7 up":
+                    return true;
+                case "Pepsi":
+                    return true;
+                case "Frutas":
+                    return true;
+                case "Te Melocotón":
+                    return true;
+                case "Te limón":
+                    return true;
+                case "Te blanco":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        else{
+            if(tamnho == 500){
+                switch(nombreBebida){
+                    case "Te melocotón":
+                        return true;
+                    case "Te blanco":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+            else{
+                if(tamnho == 600){
+                    switch(nombreBebida){
+                        case "Zarza":
+                            return true;
+                        case "Kolita":
+                            return true;
+                        case "Piña":
+                            return true;
+                        case "Pepsi":
+                            return true;
+                        case "Ginger Ale":
+                            return true;
+                        case "Coca Cola":
+                            return true;
+                        case "Jet":
+                            return true;
+                        case "Gatorade azul":
+                            return true;
+                        case "Gatorade rojo":
+                            return true;
+                        default:
+                            return false;
+                    }
+                }
+                // 2L
+                else{
+                    switch(nombreBebida){
+                        case "Pepsi":
+                            return true;
+                        case "Zarza":
+                            return true;
+                        case "Piña":
+                            return true;
+                        case "Kolita":
+                            return true;
+                        case "Toronja":
+                            return true;
+                        default:
+                            return false;
+                    }
+                }
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -886,8 +1292,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btn355;
     private javax.swing.JButton btn500;
     private javax.swing.JButton btn600;
+    private javax.swing.JButton cajetabtn;
+    private javax.swing.JSpinner cantidad;
     private javax.swing.JButton carneCerdobtn;
     private javax.swing.JButton carneResbtn;
+    private javax.swing.JButton chiclesbtn;
     private javax.swing.JButton choriBurgerbtn;
     private javax.swing.JButton choripanbtn;
     private javax.swing.JButton combo1btn;
@@ -900,11 +1309,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton hotdogbtn;
     private javax.swing.JButton huevobtn;
     private javax.swing.JButton imprimirbtn;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JButton jamonbtn;
     private javax.swing.JButton machaTortabtn;
     private javax.swing.JButton machabtn;
@@ -916,6 +1324,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton patatasbtn;
     private javax.swing.JButton pescadobtn;
     private javax.swing.JButton pollobtn;
+    private javax.swing.JButton postrebtn;
     private javax.swing.JButton salchiBurgerbtn;
     private javax.swing.JButton salchipapasbtn;
     private javax.swing.JButton sinpebtn;
@@ -925,5 +1334,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton tacoMaizbtn;
     private javax.swing.JButton tacoPapasbtn;
     private javax.swing.JButton tarjetabtn;
+    private javax.swing.JComboBox<String> tipoBebida;
+    private javax.swing.JLabel totalApagar;
     // End of variables declaration//GEN-END:variables
 }

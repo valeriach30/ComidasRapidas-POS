@@ -4,16 +4,18 @@
  */
 package Control;
 
+import Modelo.Pedido;
+
 /**
  *
  * @author vchin
  */
 public class Controlador {
-
+    
+    public Pedido pedido = new Pedido();
+    
     public Controlador() {
     }
     
-    public void crearProductos(){
-        
-    }
+    
 }
