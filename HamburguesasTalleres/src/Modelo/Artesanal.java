@@ -15,7 +15,7 @@ public class Artesanal extends Hamburguesa{
         this.tipo = tipo;
     }
 
-    public Artesanal(enumTipoArtesanal tipo, String nombre, Float precio) {
+    public Artesanal(enumTipoArtesanal tipo, String nombre, Integer precio) {
         super(nombre, precio);
         this.tipo = tipo;
     }

@@ -11,13 +11,11 @@ package Modelo;
 public class Original extends Hamburguesa{
     private enumTipoOriginal tipo;
 
-    public Original() {
-    }
-
-    public Original(String nombre, Float precio, enumTipoOriginal tipo) {
+    public Original(String nombre, Integer precio, enumTipoOriginal tipo) {
         super(nombre, precio);
         this.tipo = tipo;
     }
+
 
     public enumTipoOriginal getTipo() {
         return tipo;

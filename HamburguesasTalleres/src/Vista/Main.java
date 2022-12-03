@@ -5,6 +5,8 @@
 package Vista;
 
 import Control.Controlador;
+import Modelo.enumTipoArtesanal;
+import Modelo.enumTipoOriginal;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,11 +16,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Main extends javax.swing.JFrame {
 
-    Controlador contol ;
+    Controlador control ;
     Integer totalP = 0;
     public Main() {
         initComponents();
-        this.contol = new Controlador();
+        this.control = new Controlador();
     }
 
     /**
@@ -777,6 +779,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Con Huevo", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(2750, cantidadProducto, enumTipoOriginal.CONHUEVO, "Con Huevo");
     }//GEN-LAST:event_huevobtnActionPerformed
 
     private void SencillabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SencillabtnActionPerformed
@@ -786,6 +790,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Sencilla", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(2500, cantidadProducto, enumTipoOriginal.SENCILLA, "Sencilla");
     }//GEN-LAST:event_SencillabtnActionPerformed
 
     private void dobleQuesobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobleQuesobtnActionPerformed
@@ -795,6 +801,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Doble Queso", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(2750, cantidadProducto, enumTipoOriginal.DOBLEQUESO, "Doble Queso");
     }//GEN-LAST:event_dobleQuesobtnActionPerformed
 
     private void DobleTortabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DobleTortabtnActionPerformed
@@ -804,6 +812,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Doble Torta", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(3500, cantidadProducto, enumTipoOriginal.DOBLETORTA, "Doble Torta");
     }//GEN-LAST:event_DobleTortabtnActionPerformed
 
     private void TripleTortabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripleTortabtnActionPerformed
@@ -813,6 +823,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Triple Torta", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(4500, cantidadProducto, enumTipoOriginal.TRIPLETORTA, "Triple Torta");
     }//GEN-LAST:event_TripleTortabtnActionPerformed
 
     private void choriBurgerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choriBurgerbtnActionPerformed
@@ -822,6 +834,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "CHori Burger", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(3000, cantidadProducto, enumTipoOriginal.CHORIBURGER, "Chori Burger");
     }//GEN-LAST:event_choriBurgerbtnActionPerformed
 
     private void pollobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pollobtnActionPerformed
@@ -831,6 +845,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Artesanal Pollo", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarArtesanal(3500, cantidadProducto, enumTipoArtesanal.POLLO, "Artesanal Pollo");
     }//GEN-LAST:event_pollobtnActionPerformed
 
     private void carneResbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carneResbtnActionPerformed
@@ -840,6 +856,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Artesanal Mechada Res", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarArtesanal(3500, cantidadProducto, enumTipoArtesanal.CARNERES, "Artesanal Mechada Res");
     }//GEN-LAST:event_carneResbtnActionPerformed
 
     private void carneCerdobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carneCerdobtnActionPerformed
@@ -849,6 +867,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Artesanal Mechada Cerdo", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarArtesanal(3500, cantidadProducto, enumTipoArtesanal.CARNECERDO, "Artesanal Mechada Cerdo");
     }//GEN-LAST:event_carneCerdobtnActionPerformed
 
     private void pescadobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pescadobtnActionPerformed
@@ -858,6 +878,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Artesanal Pescado", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarArtesanal(3500, cantidadProducto, enumTipoArtesanal.PESCADO, "Artesanal Pescado");
     }//GEN-LAST:event_pescadobtnActionPerformed
 
     private void patatasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patatasbtnActionPerformed
@@ -1002,6 +1024,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Con Jamon", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(2750, cantidadProducto, enumTipoOriginal.CONJAMON, "Con Jamon");
     }//GEN-LAST:event_jamonbtnActionPerformed
 
     private void salchiBurgerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salchiBurgerbtnActionPerformed
@@ -1011,6 +1035,8 @@ public class Main extends javax.swing.JFrame {
         model.addRow(new Object[]{cantidad.getValue(), "Salchi Burger", Integer.toString(total)});
         totalP += total;
         totalApagar.setText(Integer.toString(totalP));
+        
+        control.agregarOriginal(2750, cantidadProducto, enumTipoOriginal.SALCHIBURGER, "SalchiBurger");
     }//GEN-LAST:event_salchiBurgerbtnActionPerformed
 
     private void fajitasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fajitasbtnActionPerformed

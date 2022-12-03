@@ -13,7 +13,7 @@ public class Especial extends Hamburguesa{
     public Especial() {
     }
 
-    public Especial(String nombre, Float precio) {
+    public Especial(String nombre, Integer precio) {
         super(nombre, precio);
     }
     

@@ -10,7 +10,7 @@ package Modelo;
  */
 public class Hamburguesa {
     private String nombre;
-    private Float precio;
+    private Integer precio;
 
     public String getNombre() {
         return nombre;
@@ -20,18 +20,18 @@ public class Hamburguesa {
         this.nombre = nombre;
     }
 
-    public Float getPrecio() {
+    public Integer getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Float precio) {
+    public void setPrecio(Integer precio) {
         this.precio = precio;
     }
 
     public Hamburguesa() {
     }
 
-    public Hamburguesa(String nombre, Float precio) {
+    public Hamburguesa(String nombre, Integer precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
